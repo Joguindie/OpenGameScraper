@@ -5,7 +5,7 @@
 
 A privacy-first, client-side toolkit to scrape user game libraries from closed ecosystems (Nintendo, PlayStation, Steam) without requiring passwords, API tokens, or compromised credentials.
 
-Built with love by the [Joguindie](https://github.com/joguindie) community.
+Built with love by the [Joguindie](https://github.com/joguindie).
 
 ## Why this exists?
 
@@ -16,24 +16,31 @@ This project provides safe, minified JavaScript snippets that users can run dire
 
 ## Supported platforms
 
-| Platform              |   Status   | Method      | Extraction Target                                               |
-| :-------------------- | :--------: | :---------- | :-------------------------------------------------------------- |
-| **Nintendo Switch**   | 🟢 Active  | Bookmarklet | [Virtual Game Cards](https://accounts.nintendo.com/portal/vgcs) |
-| **Steam**             | 🟡 Planned | TBD         |                                                                 |
-| **PlayStation (PSN)** | 🟡 Planned | TBD         |                                                                 |
+| Platform        |   Status   | Method      | Extraction Target                                               |
+| :-------------- | :--------: | :---------- | :-------------------------------------------------------------- |
+| **Nintendo**    | 🟢 Active  | Bookmarklet | [Virtual Game Cards](https://accounts.nintendo.com/portal/vgcs) |
+| **PlayStation** | 🟢 Active  | Bookmarklet | [Library](https://library.playstation.com)                      |
+| **Steam**       | 🟡 Planned | TBD         |                                                                 |
 
 ---
 
-## Users: How to Use (Nintendo Switch)
+## Users: How to Use
 
-You can extract your Nintendo Switch library using our Bookmarklet.
+You can extract your game libraries using our Bookmarklets.
 
-### Desktop instructions
+### Nintendo
 
-1. **Create the Bookmarklet:** create a new bookmark in your browser (usually `Ctrl+D` or `Cmd+D`). Name it something like "Extract Switch Games".
-2. **Edit the URL:** edit the bookmark you just created and paste the minified code (you can find it in the `/src` folder) into the **URL** field.
+1. **Create the Bookmarklet:** create a new bookmark in your browser (usually `Ctrl+D` or `Cmd+D`). Name it something like "Extract Nintendo Games".
+2. **Edit the URL:** edit the bookmark you just created and paste the minified code (found in `/src/nintendo_game_scraper_script.js`) into the **URL** field.
 3. **Go to Nintendo:** log in to your Nintendo Account and navigate to the [Virtual Game Cards page](https://accounts.nintendo.com/portal/vgcs).
-4. **Extract:** click the bookmark you created. A success message will appear, and your game list (in JSON format) will be copied to your clipboard!
+4. **Extract:** click the bookmark you created. A feedback overlay will appear, and your game list (in JSON format) will be copied to your clipboard!
+
+### PlayStation
+
+1. **Create the Bookmarklet:** create a new bookmark in your browser. Name it something like "Extract PlayStation Games".
+2. **Edit the URL:** edit the bookmark you just created and paste the minified code (found in `/src/playstation_game_scraper_script.js`) into the **URL** field.
+3. **Go to PlayStation:** log in to your account and navigate to the [Library page](https://library.playstation.com).
+4. **Extract:** click the bookmark you created. The script will automatically paginate through your purchased games, and once finished, you can copy the JSON payload to your clipboard!
 
 ---
 
@@ -48,14 +55,12 @@ All scripts in this repository output a standardized JSON array. Example:
 ```json
 [
   {
-    "title": "Super Smash Bros. Ultimate",
-    "coverUrl": "https://...",
+    "title": "Mario Wonder",
     "platform": "Nintendo Switch"
   },
   {
-    "title": "Hollow Knight",
-    "coverUrl": "https://...",
-    "platform": "Nintendo Switch"
+    "title": "God of War: Laufey",
+    "platform": "PS5"
   }
 ]
 ```
@@ -83,7 +88,7 @@ Once the user extracts the data on the target platform, you simply provide a tex
 
 ## Contributing
 
-We want to expand this to support PlayStation, Steam, Xbox, and GOG!
+We want to expand this to support Steam, Xbox, and GOG!
 If you want to contribute:
 
 1. Fork the project.
