@@ -20,7 +20,9 @@ This project provides safe, minified JavaScript snippets that users can run dire
 | :-------------- | :--------: | :---------- | :-------------------------------------------------------------- |
 | **Nintendo**    | 🟢 Active  | Bookmarklet | [Virtual Game Cards](https://accounts.nintendo.com/portal/vgcs) |
 | **PlayStation** | 🟢 Active  | Bookmarklet | [Library](https://library.playstation.com)                      |
-| **Steam**       | 🟡 Planned | TBD         |                                                                 |
+| **Steam**       | 🟢 Active  | Bookmarklet | [Games](https://steamcommunity.com/my/games/?tab=all)           |
+| **Xbox**        | 🟡 Planned | TBD         |                                                                 |
+| **GOG**         | 🟡 Planned | TBD         |                                                                 |
 
 ---
 
@@ -41,6 +43,13 @@ You can extract your game libraries using our Bookmarklets.
 2. **Edit the URL:** edit the bookmark you just created and paste the minified code (found in `/src/playstation_game_scraper_script.js`) into the **URL** field.
 3. **Go to PlayStation:** log in to your account and navigate to the [Library page](https://library.playstation.com).
 4. **Extract:** click the bookmark you created. The script will automatically paginate through your purchased games, and once finished, you can copy the JSON payload to your clipboard!
+
+### Steam
+
+1. **Create the Bookmarklet:** create a new bookmark in your browser. Name it something like "Extract Steam Games".
+2. **Edit the URL:** edit the bookmark you just created and paste the minified code (found in `/src/steam_game_scraper_script.js`) into the **URL** field.
+3. **Go to Steam:** log in to your account and navigate to your [Games page](https://steamcommunity.com/my/games/?tab=all).
+4. **Extract:** click the bookmark you created. Because Steam handles large libraries differently, the script will automatically scroll down your page to read your entire collection. Once it reaches the bottom, you can copy the JSON payload to your clipboard!
 
 ---
 
@@ -88,7 +97,7 @@ Once the user extracts the data on the target platform, you simply provide a tex
 
 ## Contributing
 
-We want to expand this to support Steam, Xbox, and GOG!
+We want to expand this to support Xbox and GOG!
 If you want to contribute:
 
 1. Fork the project.
